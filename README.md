@@ -1,37 +1,41 @@
+# 🚗 Car Rental Full Stack App
 
-# 🚗 Full-Stack Car Rental System — Phase 2
+A full-stack car rental web application built using Flask, SQLite, and HTML/CSS.
 
-Phase 2 adds a lightweight **admin panel**, **car management (add/edit/delete)**, **booking conflict detection**, and **booking cancellation**.
+---
 
-## New in Phase 2
-- Admin dashboard
-- Add, edit, and delete cars
-- Toggle car availability
-- Booking conflict check to prevent date overlap for the same car
-- Booking cancellation support
-- Seeded admin account for testing
+## ✨ Features
 
-## Admin Login
-- **Email:** `admin@rentalx.com`
-- **Password:** `admin123`
-
-## Core Features
-- User registration and login
+- User authentication (Register/Login)
 - Browse available cars
-- Filter cars by category
-- Book a car with pickup location and rental dates
-- Conflict detection for overlapping bookings
-- Dashboard to view and cancel user bookings
-- Admin dashboard to manage inventory
+- Book cars with date selection
+- Booking conflict detection
+- Admin panel (Add/Edit/Delete cars)
+- Booking cancellation
 
-## Run Locally
+---
+
+## 🛠️ Tech Stack
+
+- Python (Flask)
+- SQLite
+- HTML, CSS
+- SQLAlchemy
+
+---
+
+## 📸 Demo
+
+![App Screenshot](screenshots/home.png)
+
+---
+
+## 🚀 Setup
+
 ```bash
-git clone <your-repo-url>
-cd car-rental-fullstack-phase2
+git clone https://github.com/Aakashballa/car-rental-fullstack.git
+cd car-rental-fullstack
 python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
-```
-
-Then open [http://127.0.0.1:5000](http://127.0.0.1:5000)
