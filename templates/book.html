@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% block title %}Book {{ car.name }} | RentalX{% endblock %}
+{% block content %}
+<div class="booking-layout">
+  <div class="card detail-card">
+    <img src="{{ car.image }}" alt="{{ car.name }}">
+    <div class="card-body">
+      <h2>{{ car.name }}</h2>
+      <p>{{ car.category }} • {{ car.seats }} seats • {{ car.transmission }}</p>
+      <p class="price">₹{{ car.price_per_day }}/day</p>
+      <p class="muted">Bookings are blocked automatically if the dates overlap with an existing confirmed booking.</p>
+    </div>
+  </div>
+  <div class="form-card">
+    <h1>Book This Car</h1>
+    <form method="post">
+      <label>Pickup Location</label>
+      <input type="text" name="pickup_location" required>
+      <label>Start Date</label>
+      <input type="date" name="start_date" required>
+      <label>End Date</label>
+      <input type="date" name="end_date" required>
+      <button class="btn" type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

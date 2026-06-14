@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% block title %}Cars | RentalX{% endblock %}
+{% block content %}
+<section class="page-header">
+  <h1>Available Cars</h1>
+  <form class="filter-form" method="get">
+    <select name="category">
+      <option value="">All Categories</option>
+      {% for option in ['SUV','Sedan','Van','Electric','Hatchback'] %}
+      <option value="{{ option }}" {% if selected_category == option %}selected{% endif %}>{{ option }}</option>
+      {% endfor %}
+    </select>
+    <button class="btn small" type="submit">Filter</button>
+  </form>
+</section>
+<div class="grid">
+  {% for car in cars %}
+    <div class="card">
+      <img src="{{ car.image }}" alt="{{ car.name }}">
+      <div class="card-body">
+        <h3>{{ car.name }}</h3>
+        <p>{{ car.category }} • {{ car.seats }} seats • {{ car.transmission }}</p>
+        <p class="price">₹{{ car.price_per_day }}/day</p>
+        {% if car.available %}
+        <a class="btn small" href="{{ url_for('book', car_id=car.id) if current_user else url_for('login') }}">Book Now</a>
+        {% else %}
+        <span class="badge unavailable">Unavailable</span>
+        {% endif %}
+      </div>
+    </div>
+  {% else %}
+    <p>No cars found for this category.</p>
+  {% endfor %}
+</div>
+{% endblock %}

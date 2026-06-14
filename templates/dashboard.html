@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% block title %}Dashboard | RentalX{% endblock %}
+{% block content %}
+<section class="page-header">
+  <h1>My Bookings</h1>
+  <p>Welcome, {{ current_user.name }}.</p>
+</section>
+<div class="booking-list">
+  {% for booking in bookings %}
+    <div class="booking-item">
+      <div class="space-between">
+        <h3>{{ booking.car.name }}</h3>
+        <span class="badge {{ booking.status }}">{{ booking.status }}</span>
+      </div>
+      <p><strong>Location:</strong> {{ booking.pickup_location }}</p>
+      <p><strong>Dates:</strong> {{ booking.start_date }} to {{ booking.end_date }}</p>
+      <p><strong>Total:</strong> ₹{{ booking.total_price }}</p>
+      <p><strong>Booked on:</strong> {{ booking.created_at.strftime('%Y-%m-%d') }}</p>
+      {% if booking.status == 'confirmed' %}
+      <form method="post" action="{{ url_for('cancel_booking', booking_id=booking.id) }}">
+        <button class="btn danger small" type="submit">Cancel Booking</button>
+      </form>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="booking-item">
+      <p>No bookings yet. <a href="{{ url_for('cars') }}">Browse available cars</a>.</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

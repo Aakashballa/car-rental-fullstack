@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block title %}Login | RentalX{% endblock %}
+{% block content %}
+<div class="form-card">
+  <h1>Login</h1>
+  <p class="muted">Use the seeded admin login to test Phase 2 admin features.</p>
+  <form method="post">
+    <label>Email</label>
+    <input type="email" name="email" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <button class="btn" type="submit">Login</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+
+{% extends 'base.html' %}
+{% block title %}Admin | RentalX{% endblock %}
+{% block content %}
+<section class="page-header">
+  <h1>Admin Dashboard</h1>
+  <a class="btn" href="{{ url_for('admin_add_car') }}">Add New Car</a>
+</section>
+
+<section>
+  <h2>Cars Inventory</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price/Day</th>
+          <th>Available</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for car in cars %}
+        <tr>
+          <td>{{ car.name }}</td>
+          <td>{{ car.category }}</td>
+          <td>₹{{ car.price_per_day }}</td>
+          <td>{{ 'Yes' if car.available else 'No' }}</td>
+          <td class="action-row">
+            <a class="btn small secondary" href="{{ url_for('admin_edit_car', car_id=car.id) }}">Edit</a>
+            <form method="post" action="{{ url_for('admin_delete_car', car_id=car.id) }}" onsubmit="return confirm('Delete this car?');">
+              <button class="btn danger small" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Recent Bookings</h2>
+  <div class="booking-list">
+    {% for booking in bookings %}
+    <div class="booking-item">
+      <div class="space-between">
+        <h3>{{ booking.car.name }}</h3>
+        <span class="badge {{ booking.status }}">{{ booking.status }}</span>
+      </div>
+      <p><strong>User:</strong> {{ booking.user.name }} ({{ booking.user.email }})</p>
+      <p><strong>Dates:</strong> {{ booking.start_date }} to {{ booking.end_date }}</p>
+      <p><strong>Total:</strong> ₹{{ booking.total_price }}</p>
+    </div>
+    {% else %}
+    <div class="booking-item"><p>No bookings yet.</p></div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
