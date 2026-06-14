@@ -1,7 +1,6 @@
 # 🚗 Car Rental Full Stack App
 
-A full-stack car rental web application built using Flask, SQLite, HTML, and CSS.  
-This project simulates a real-world car booking system with user and admin functionality.
+A full-stack car rental web application built using Flask, SQLite, HTML, and CSS. This project simulates a real-world car booking system with user and admin functionality.
 
 ---
 
@@ -33,43 +32,24 @@ This project simulates a real-world car booking system with user and admin funct
 
 ## 🚀 Setup Instructions
 
-### Clone the repository
 ```bash
+# Clone the repository
 git clone https://github.com/Aakashballa/car-rental-fullstack.git
 cd car-rental-fullstack
 
----
-
-## Create virtual environment
-```bash
+# Create virtual environment
 python -m venv .venv
 
-===
-## Activate virtual environment (Windows)
-```bash
+# Activate virtual environment (Windows)
 .venv\Scripts\activate
 
----
-
-## Install dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
 
----
-
-## Run the application
-```bash
+# Run application
 python app.py
 
----
-
-## Open in browser
-```bash
-http://127.0.0.1:5000
-
----
-
-## 👑 Admin Login
+### 👑 Admin Login
 
 Email: admin@rentalx.com
 Password: admin123
