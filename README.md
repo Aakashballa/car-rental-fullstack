@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 # Run application
 python app.py
-
+```
 ### 👑 Admin Login
 
 Email: admin@rentalx.com
