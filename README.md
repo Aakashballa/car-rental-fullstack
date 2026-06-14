@@ -51,35 +51,35 @@ python app.py
 ```
 ### 👑 Admin Login
 
-Email: admin@rentalx.com
+Email: admin@rentalx.com <br> 
 Password: admin123
 
 ---
 
 ## 📁 Project Structure
 
-car-rental-fullstack/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-├── static/
-├── templates/
-├── screenshots/
+car-rental-fullstack/ <br>
+│  <br>
+├── app.py  <br>
+├── requirements.txt  <br>
+├── README.md  <br>
+├── static/  <br>
+├── templates/  <br>
+├── screenshots/  <br>
 
 ---
 
 ## 🎯 Future Improvements
 
-Payment integration
-Email notifications
-Cloud database (PostgreSQL)
-Live deployment
++ Payment integration
++ Email notifications
++ Cloud database (PostgreSQL)
++ Live deployment
 
 ---
 
 ## 👨‍💻 Author
-Akash Balla
+Akash Balla  <br>
 Aspiring Software Developer 🚀
 
 ---
